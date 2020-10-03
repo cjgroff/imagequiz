@@ -26,7 +26,7 @@ class Images extends React.Component{
                 images.push(<div>
                     {this.flowers[i].name}
                     <br/>
-                    <img src={'imagequiz/image/'+this.flowers[i].picture}/>
+                    <img src={'image/'+this.flowers[i].picture}/>
                 </div>)
             }
             return (
