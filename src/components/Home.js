@@ -1,6 +1,11 @@
 import React from 'react';
-import Images from './Images';
-
+import Imagesquiz from './Imagesquiz';
+import {
+    BrowserRouter,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 class Home extends React.Component{
     constructor(props){
@@ -15,6 +20,7 @@ class Home extends React.Component{
         this.setState({showLoginForm: false}) 
     }
     render(){
+        /*
         if (this.state.showLoginForm){
             return (
                 <div>
@@ -30,14 +36,30 @@ class Home extends React.Component{
                 </div>
             )
         }
-        else{
-            return(
-                <div>
-                    <Images />
-                </div>
-            )
+        */
+       let username = '';
+        const location = this.props.location;
+        if (location) {
+            console.log(location);
+            if (location.state) {
+                if (location.state.user) {
+                    username = location.state.user;
+                }
+            }
         }
 
+        return (
+            <div>
+                <div className="loginButton">
+                    {username.length > 0 ? username
+                        : <Link to='/login'>Login</Link>}
+                </div>
+                <div>
+                    {username.length == 0 ?  "Please Login"
+                        :< Imagesquiz />}
+                </div>
+            </div>
+        )
     }
 }
 
