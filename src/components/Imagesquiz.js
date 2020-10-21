@@ -21,7 +21,7 @@ class Imagesquiz extends React.Component{
 
     }
     click = (event) => {
-        let q = event.target.id
+        let q = event.currentTarget.getAttribute("quiz") //Is there a better way to get the quiz
         console.log("click q ", q)
         this.setState({quiznum : parseInt(q)}) 
     }
@@ -39,12 +39,10 @@ class Imagesquiz extends React.Component{
         const images = []
             for (let i = 0 ; i < this.quizzes.length; i++)
             {
-                images.push(<div onClick= {this.click} id ={this.quizzes[i][0]}>
-                    <Link to={"/quiz/"+i}>
+                images.push(<div onClick= {this.click} quiz = {i} >
                     {this.quizzes[i][0]}
                     <br/>
-                    <img src={process.env.PUBLIC_URL + "/image/" + this.quizzes[i][1]} id ={this.quizzes[i][0]} />
-                    </Link>
+                    <img src={process.env.PUBLIC_URL + "/image/" + this.quizzes[i][1]} />   
                 </div>)
             }
         

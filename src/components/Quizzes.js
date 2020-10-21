@@ -1,8 +1,8 @@
 var quizzes = [
     ['Quiz1',"daffodil.png",
         [
-            ["apple.jpg",["banana","apple","watermelon","dog"],"apple"],
-            ["dog.jpg",["cat","car","whale","dog"],"dog"],
+            ["apple.png",["banana","apple","watermelon","dog"],"apple"],
+            ["dog.jpeg",["cat","car","whale","dog"],"dog"],
             ["cat.jpg",["cat","car","whale","dog"],"cat"],
             ["car.jpg",["cat","car","whale","dog"],"car"],
             ["whale.jpg",["cat","car","whale","dog"],"whale"],

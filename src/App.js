@@ -9,21 +9,19 @@ import {
 } from "react-router-dom";
 import Login from './components/Login';
 import Quiz from './components/Quiz';
+import Imagesquiz from './components/Imagesquiz';
 
 
 function App() {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
-        <Route exact path='/' render={props => <Home {...props} />}>
-          
-        </Route>
+        <Route exact path='/' render={props => <Home {...props} />}/>
         <Route path='/login' >
           <Login />
         </Route>
-        <Route path='/quiz' >
-          <Quiz />
-        </Route>
+        <Route path='/quiz' render={props => <Quiz {...props} />}/>
+        <Route path='/imagesquiz' render={props => <Imagesquiz {...props} />}/>
       </Switch>
     </BrowserRouter>
   );
