@@ -4,18 +4,27 @@ var quizzes = [
             ["apple.png",["banana","apple","watermelon","dog"],"apple"],
             ["dog.jpeg",["cat","car","whale","dog"],"dog"],
             ["cat.jpg",["cat","car","whale","dog"],"cat"],
-            ["car.jpg",["cat","car","whale","dog"],"car"],
+            ["car.jpeg",["cat","car","whale","dog"],"car"],
             ["whale.jpg",["cat","car","whale","dog"],"whale"],
-            ["fish.jpg",["cat","fish","whale","dog"],"fish"],
+            ["fish.jpeg",["cat","fish","whale","dog"],"fish"],
         ]],
     ['Quiz2','cherryblossom.png',
         [
-            ["pie.jpg",["Banana","pie","watermelon","dog"],"pie"],
-            ["pancakes.jpg",["cat","pancakes","whale","dog"],"pancakes"],
+            ["pie.jpeg",["Banana","pie","watermelon","dog"],"pie"],
+            ["pancakes.jpeg",["cat","pancakes","whale","dog"],"pancakes"],
             ["cat.jpg",["cat","car","whale","dog"],"cat"],
-            ["car.jpg",["cat","car","whale","dog"],"car"],
+            ["car.jpeg",["cat","car","whale","dog"],"car"],
             ["whale.jpg",["cat","car","whale","dog"],"whale"],
-            ["fish.jpg",["cat","fish","whale","dog"],"fish"],
+            ["fish.jpeg",["cat","fish","whale","dog"],"fish"],
         ]],
+    ['Quiz3','daisy.jpg',
+        [
+            ["pie.jpeg",["Banana","pie","watermelon","dog"],"pie"],
+            ["pancakes.jpeg",["cat","pancakes","whale","dog"],"pancakes"],
+            ["cat.jpg",["cat","car","whale","dog"],"cat"],
+            ["car.jpeg",["cat","car","whale","dog"],"car"],
+            ["whale.jpg",["cat","car","whale","dog"],"whale"],
+            ["fish.jpeg",["cat","fish","whale","dog"],"fish"],
+        ]]
 ]
 export default quizzes;

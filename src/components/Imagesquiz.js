@@ -10,7 +10,7 @@ import {
 
   } from "react-router-dom";
 import quizzes from "./Quizzes";
-
+import "./Imagesquiz.css"
 class Imagesquiz extends React.Component{
     constructor(props){
         super(props)
@@ -35,7 +35,7 @@ class Imagesquiz extends React.Component{
             )
         }
         else{
-
+            
         const images = []
             for (let i = 0 ; i < this.quizzes.length; i++)
             {

@@ -1,0 +1,9 @@
+div {
+    background-color: aqua;
+    text-align: center;
+    text-decoration-style: solid;
+    border-image-width: 200px;
+}
+body {
+    background: aqua;
+}
