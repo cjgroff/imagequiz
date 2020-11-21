@@ -48,7 +48,7 @@ class Imagesquiz extends React.Component{
         const images = []
             for (let i = 0 ; i < this.state.quizzes.length; i++)
             {
-                images.push(<div onClick= {this.click} quiz = {i} >
+                images.push(<div onClick= {this.click} quiz = {i+1} >
                     {this.state.quizzes[i][0]}
                     <br/>
                     <img src={process.env.PUBLIC_URL + "/image/" + this.state.quizzes[i][1]} />   

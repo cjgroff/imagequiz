@@ -21,11 +21,17 @@ class Quiz extends React.Component{
         //console.log("quiz ctor,props",props)
         //console.log("Quiz Number:",props.location.state.quiznum)
         this.state = {
-            quiz : quizzes[props.location.state.quiznum][2],
+            //quiz : quizzes[props.location.state.quiznum][2],
+            quiz: null,
             questionnumber : 0,
             correct : 0
         }
+        const api = `https://cjgroff-imagequiz.herokuapp.com/quiz/${props.location.state.quiznum}`
+        console.log('api',api)
+        fetch(api).then(x => x.json()).then(y => {this.setState({quiz: y});
+            console.log("quiz",y)}).catch(e => console.log("Fetch quiz error",e))
     }
+
     clickchoice = (event) => {
         let quiz = this.state.quiz
         let question = quiz[this.state.questionnumber]
@@ -44,6 +50,9 @@ class Quiz extends React.Component{
     render () { 
 
         let quiz = this.state.quiz
+        if (quiz == null){
+            return(<div></div>)
+        }
         if (this.state.questionnumber == quiz.length){
             return(
             <div>Score : {this.state.correct} / {quiz.length}
