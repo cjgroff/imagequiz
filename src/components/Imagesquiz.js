@@ -16,8 +16,10 @@ class Imagesquiz extends React.Component{
     constructor(props){
         super(props)
         console.log("Imagesquiz ctor,props",props)
+        console.log("Ready to fetch")
         fetch("https://cjgroff-imagequiz.herokuapp.com/quizzes").
         then(x => x.json()).then(y => console.log("Quizzes",y))
+        console.log("Fetch complete")
         this.quizzes = quizzes
         this.state = {quiznum : -1}
         
