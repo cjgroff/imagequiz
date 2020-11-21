@@ -15,14 +15,17 @@ import "./Imagesquiz.css"
 class Imagesquiz extends React.Component{
     constructor(props){
         super(props)
+        this.quizzes = []
+        this.test = 10
         console.log("Imagesquiz ctor,props",props)
         console.log("Ready to fetch")
         fetch("https://cjgroff-imagequiz.herokuapp.com/quizzes").
         then(x => x.json()).then(y => {
-            this.quizzes=y;
-            console.log("Quizzes",y)})
+            console.log("test",this.test);
+            this.setState({quizzes: y})
+            console.log("y",y)})
         console.log("Fetch complete")
-        this.state = {quiznum : -1}
+        this.state = {quiznum : -1,quizzes:[]}
         
 
     }
@@ -43,12 +46,12 @@ class Imagesquiz extends React.Component{
         else{
             
         const images = []
-            for (let i = 0 ; i < this.quizzes.length; i++)
+            for (let i = 0 ; i < this.state.quizzes.length; i++)
             {
                 images.push(<div onClick= {this.click} quiz = {i} >
-                    {this.quizzes[i][0]}
+                    {this.state.quizzes[i][0]}
                     <br/>
-                    <img src={process.env.PUBLIC_URL + "/image/" + this.quizzes[i][1]} />   
+                    <img src={process.env.PUBLIC_URL + "/image/" + this.state.quizzes[i][1]} />   
                 </div>)
             }
         
