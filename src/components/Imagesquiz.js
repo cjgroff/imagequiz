@@ -9,15 +9,18 @@ import {
     Redirect
 
   } from "react-router-dom";
-import quizzes from "./Quizzes";
+//import quizzes from "./Quizzes";
+
 import "./Imagesquiz.css"
 class Imagesquiz extends React.Component{
     constructor(props){
         super(props)
         console.log("Imagesquiz ctor,props",props)
+        fetch("https://cjgroff-imagequiz.herokuapp.com/quizzes").
+        then(x => x.json()).then(y => console.log("Quizzes",y))
         this.quizzes = quizzes
         this.state = {quiznum : -1}
-    
+        
 
     }
     click = (event) => {
