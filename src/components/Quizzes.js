@@ -1,4 +1,4 @@
-var quizzes = [
+/*var quizzes = [
     ['Quiz1',"daffodil.png",
         [
             ["apple.png",["banana","apple","watermelon","dog"],"apple"],
@@ -28,3 +28,4 @@ var quizzes = [
         ]]
 ]
 export default quizzes;
+*/

@@ -3,7 +3,7 @@ import {
     useParams,
     Link
   } from "react-router-dom";
-import quizzes from './Quizzes';
+//import quizzes from './Quizzes';
 import Imagesquiz from './Imagesquiz';
 
 /*
@@ -24,9 +24,10 @@ class Quiz extends React.Component{
             //quiz : quizzes[props.location.state.quiznum][2],
             quiz: null,
             questionnumber : 0,
-            correct : 0
+            correct : 0,
+            quiznum : props.location.state.quiznum
         }
-        const api = `https://cjgroff-imagequiz.herokuapp.com/quiz/${props.location.state.quiznum}`
+        const api = `https://cjgroff-imagequiz.herokuapp.com/quiz/${this.state.quiznum}`
         console.log('api',api)
         fetch(api).then(x => x.json()).then(y => {this.setState({quiz: y});
             console.log("quiz",y)}).catch(e => console.log("Fetch quiz error",e))
@@ -54,6 +55,16 @@ class Quiz extends React.Component{
             return(<div></div>)
         }
         if (this.state.questionnumber == quiz.length){
+            const api = "https://cjgroff-imagequiz.herokuapp.com/score"
+            let data = {quizid: this.state.quiznum, correct: this.state.correct, outof: quiz.length }
+            fetch(api,{
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)}
+            ).catch(e => console.log("Terrible score caused error"))
+
             return(
             <div>Score : {this.state.correct} / {quiz.length}
                 <br/>
